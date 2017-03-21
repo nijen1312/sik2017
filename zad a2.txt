@@ -1,0 +1,19 @@
+
+# nc -l -p 5122
+witaj jestem Puppy
+
+C:\SIK>nc -target 192.168.2.1 5122
+mTCP Netcat by M Brutman (mbbrutman@gmail.com) (C)opyright 2007-2015
+  Version: Jul  5 2015
+ 
+Resolving server address - press Ctrl-Break to abort
+ 
+Server resolved to 192.168.2.1 - connecting
+ 
+Connected!
+ 
+witaj jestem Puppy
+ 
+Netcat: Ctrl-C detected and sent.  Use Alt-X to quit.
+ 
+Elapsed time: 13.02   Bytes sent: 1  Received: 19                              

@@ -1,0 +1,91 @@
+<sprawozdanie przedmiot="SIK" temat="A">
+    <imie_nazwisko>Marcin Jedyński</imie_nazwisko>
+    <nr_indeksu>416084</nr_indeksu>
+    <liczba_pkt>4</liczba_pkt>
+    <z>1</z>
+    <z>2</z>
+    <z>7</z>
+    <z>15</z>
+</sprawozdanie>
+
+Zadanie B.1
+OPIS: Połączenia nawiązane przez przeglądarkę firefox podczas przeglądania strony wp.pl.
+WYDRUK:
+
+s416084@pc15a:~/Documents/SIK2017$ netstat --inet -p  | grep firefox
+tcp        0      0 pc15a.labs.wmi.am:35710 liveblog.wp.pl:https    ESTABLISHED 6622/firefox    
+tcp        0      0 pc15a.labs.wmi.am:42816 wp.hit.gemius.pl:https  ESTABLISHED 6622/firefox    
+tcp        0      0 pc15a.labs.wmi.am:49094 i.wpimg.pl:https        ESTABLISHED 6622/firefox    
+tcp        0      0 pc15a.labs.wmi.am:39136 waw02s08-in-f194.:https ESTABLISHED 6622/firefox    
+tcp        0      0 pc15a.labs.wmi.am:37588 dot.wp.pl:http          ESTABLISHED 6622/firefox    
+tcp        0      0 pc15a.labs.wmi.am:34210 c.wp.pl:http            ESTABLISHED 6622/firefox    
+tcp        0      0 pc15a.labs.wmi.am:52940 d.wpimg.pl:https        ESTABLISHED 6622/firefox    
+tcp        0      0 pc15a.labs.wmi.am:57312 websocket.wp.pl:https   ESTABLISHED 6622/firefox    
+tcp        0      0 pc15a.labs.wmi.am:46318 e.wp.pl:http            ESTABLISHED 6622/firefox    
+tcp        0      0 pc15a.labs.wmi.am:58740 i.wp.pl:https           ESTABLISHED 6622/firefox    
+tcp        0      0 pc15a.labs.wmi.am:55304 www.wp.pl:https         ESTABLISHED 6622/firefox    
+tcp        0      0 pc15a.labs.wmi.am:53264 wp.tv:https             ESTABLISHED 6622/firefox    
+tcp        0      0 pc15a.labs.wmi.am:55020 i.wp.pl:http            ESTABLISHED 6622/firefox    
+tcp        0      0 pc15a.labs.wmi.am:55310 www.wp.pl:https         ESTABLISHED 6622/firefox    
+tcp        0      0 pc15a.labs.wmi.am:45550 rev-64.go2.pl:https     ESTABLISHED 6622/firefox    
+tcp        0      0 pc15a.labs.wmi.am:45544 rev-64.go2.pl:https     ESTABLISHED 6622/firefox    
+tcp        0      0 pc15a.labs.wmi.am:36172 www.wp.pl:http          ESTABLISHED 6622/firefox    
+tcp        0      0 pc15a.labs.wmi.am:58714 i.wp.pl:https           ESTABLISHED 6622/firefox    
+
+OPIS: Połączenia nawiązane podczas sesji sftp.
+WYDRUK:
+
+s416084@pc15a:~/Documents/SIK2017$ sftp demo@test.rebex.net
+The authenticity of host 'test.rebex.net (195.144.107.198)' can't be established.
+ECDSA key fingerprint is SHA256:OzvpQxRUzSfV9F/ECMXbQ7B7zbK0aTngrhFCBUno65c.
+No matching host key fingerprint found in DNS.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'test.rebex.net,195.144.107.198' (ECDSA) to the list of known hosts.
+Password: 
+Password: 
+Connected to test.rebex.net.
+sftp> ls
+pub         readme.txt  
+
+s416084@pc15a:~/Documents/SIK2017$ netstat --inet -p | grep ssh
+tcp        0      0 pc15a.labs.wmi.am:51748 test.rebex.net:ssh      ESTABLISHED 17704/ssh       
+
+OPIS: Połączenie nawiązane podczas sesji telnet
+WYDRUK:
+
+s416084@pc15a:~/Documents/SIK2017$ netstat --inet -p  | grep telnet
+tcp        0      0 pc15a.labs.wmi.am:54116 towel.blinkenlig:telnet ESTABLISHED 19273/telnet    
+
+Zadanie B.2
+WYDRUK:
+
+s416084@pc15a:~/My Documents/Pobrane$ ./a.out 
+klient: pid==23921
+serwer: pid==23922
+serwer: bind()=0
+serwer: czekam na klienta nr 1
+klient: pierwsze polaczenie ...
+klient: connect()=0
+klient: write()=10
+serwer: accept()=4
+serwer: poczatek obslugi klienta nr 1
+serwer: read()=10 buf=1234567890
+serwer: write()=10
+klient: read()=10 buf=1234567890
+serwer: czekam na klienta nr 2
+klient: drugie polaczenie ...
+klient: connect()=0
+serwer: accept()=4
+serwer: poczatek obslugi klienta nr 2
+klient: write()=10
+serwer: read()=10 buf=QWERTYUIOP
+serwer: write()=10
+klient: read()=10 buf=QWERTYUIOP
+klient: wait()=23922 0000
+
+Zadanie 60
+
+(tutaj treść zadania 7...)
+
+Zadanie 15 -------------------------------------
+(tutaj treść zadania 15...)
