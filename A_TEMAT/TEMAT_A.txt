@@ -1,0 +1,378 @@
+<sprawozdanie przedmiot="SIK" temat="A">
+    <imie_nazwisko>Marcin Jedyński</imie_nazwisko>
+    <nr_indeksu>416084</nr_indeksu>
+    <liczba_pkt>9,5</liczba_pkt>
+    <z>opis</z>
+    <z>1</z>
+    <z>1b</z>
+    <z>2</z>
+    <z>A.1</z>
+    <z>A.2</z>
+    <z>A.3</z>
+</sprawozdanie>
+
+Zadanie opis
+
+OPIS:
+Polecenie ping z opcją -i oraz -c pozwala ustawić interwał oraz liczbę pakietów icmp które zostaną wysłane.
+Poniższy przykład wykonuje ping do serwera DNS Google.
+
+WYDRUK:
+416084@pc14c:~/Documents/SIK2017$ ping -i 2 -c 5 8.8.8.8
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=46 time=26.9 ms
+64 bytes from 8.8.8.8: icmp_seq=2 ttl=46 time=29.1 ms
+64 bytes from 8.8.8.8: icmp_seq=3 ttl=46 time=26.1 ms
+64 bytes from 8.8.8.8: icmp_seq=4 ttl=46 time=26.1 ms
+64 bytes from 8.8.8.8: icmp_seq=5 ttl=46 time=25.4 ms
+
+--- 8.8.8.8 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 8006ms
+rtt min/avg/max/mdev = 25.465/26.785/29.177/1.288 ms
+
+OPIS:
+Polecenie traceroute pozwala prześledzić drogę pakietu IP przez kolejne routery do określonego celu.
+
+WYDRUK:
+s416084@pc14c:~/Documents/SIK2017$ traceroute www.cert.gov.pl
+traceroute to www.cert.gov.pl (194.181.5.2), 30 hops max, 60 byte packets
+ 1  gw-v100.core.wmi.amu.edu.pl (150.254.79.1)  0.518 ms  0.895 ms  1.218 ms
+ 2  fw.core.wmi.amu.edu.pl (150.254.76.33)  0.264 ms  0.270 ms  0.265 ms
+ 3  amur.amu.edu.pl (150.254.115.57)  4.103 ms  4.379 ms  4.495 ms
+ 4  do-pozman.amu.edu.pl (150.254.116.6)  7.232 ms  7.235 ms  7.228 ms
+ 5  pozmangw.amu.edu.pl (150.254.115.5)  7.369 ms  7.268 ms  7.351 ms
+ 6  148.81.254.129 (148.81.254.129)  11.250 ms  11.911 ms  11.900 ms
+ 7  pw-gw-z-as1887.warman.nask.pl (195.187.255.52)  12.818 ms  12.306 ms  12.269 ms
+ 8  195.187.255.201 (195.187.255.201)  11.388 ms  12.214 ms  12.180 ms
+ 9  195.187.255.191 (195.187.255.191)  18.002 ms  14.740 ms  14.732 ms
+10  194.181.1.92 (194.181.1.92)  11.281 ms  11.194 ms  11.289 ms
+11  www.abw.gov.pl (194.181.5.2)  11.288 ms  11.735 ms  6.229 ms
+12  * * *
+13  * * *
+14  * * *
+15  * * *
+16  * * *
+17  * * *
+18  * * *
+19  * * *
+20  * * *
+21  * * *
+22  * * *
+23  * * *
+24  * * *
+25  * * *
+26  * * *
+27  * * *
+28  * * *
+29  * * *
+30  * * *
+
+OPIS:
+Polecenie arp wyświetla wpisy w tablicy arp
+
+WYDRUK:
+s416084@pc14c:~/Documents/SIK2017$ arp -n
+Address                  HWtype  HWaddress           Flags Mask            Iface
+150.254.79.1             ether   74:8e:f8:fb:d6:66   C                     eth0
+
+OPIS:
+Polecenie host i nslookup pozwalają powiązać adres ip do adresu domenowego.
+
+WYDRUK:
+s416084@pc14c:~/Documents/SIK2017$ host tvn24.pl
+tvn24.pl has address 46.229.145.10
+tvn24.pl mail is handled by 10 mail.tvn.pl.
+tvn24.pl mail is handled by 20 mail3.tvn.pl.
+
+s416084@pc14c:~/Documents/SIK2017$ nslookup tvn24.pl
+Server:		150.254.78.30
+Address:	150.254.78.30#53
+
+Non-authoritative answer:
+Name:	tvn24.pl
+Address: 46.229.145.10
+
+OPIS:
+Polecenie ifconfig pozwala podejrzeć stan interfejsów sieciowych w systemie oraz zarządzać nimi.
+
+WYDRUK:
+s416084@pc14c:~/Documents/SIK2017$ ifconfig
+eth0      Link encap:Ethernet  HWaddr d4:be:d9:89:6f:91  
+          inet addr:150.254.79.4  Bcast:150.254.79.255  Mask:255.255.255.0
+          inet6 addr: fe80::d6be:d9ff:fe89:6f91/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:328494 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:210639 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:388963318 (388.9 MB)  TX bytes:198793208 (198.7 MB)
+          Interrupt:20 Memory:e1a00000-e1a20000 
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:73 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:73 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1 
+          RX bytes:11696 (11.6 KB)  TX bytes:11696 (11.6 KB)
+
+OPIS:
+Polecenie route pozwala na podejrzenie zawartości tablicy trasowania oraz modyfikować jej wpisy w trybie root'a.
+
+WYDRUK:
+s416084@pc14c:~/Documents/SIK2017$ route
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+default         gw-v100.core.wm 0.0.0.0         UG    1024   0        0 eth0
+150.254.79.0    *               255.255.255.0   U     0      0        0 eth0
+gw-v100.core.wm *               255.255.255.255 UH    1024   0        0 eth0
+
+OPIS:
+Polecenie hostname podaje nazwę localhosta.
+
+WYDRUK:
+s416084@pc14c:~/Documents/SIK2017$ hostname
+pc14c
+
+OPIS:
+Polecenie domainname zwraca nazwę domeny dla localhosta.
+
+WYDRUK:
+s416084@pc14c:~/Documents/SIK2017$ domainname
+(none)
+
+OPIS:
+Plik /etc/resolv.conf zawiera wpisy serwerów DNS.
+
+WYDRUK:
+s416084@pc14c:~/Documents/SIK2017$ cat /etc/resolv.conf 
+nameserver 150.254.78.30
+nameserver 150.254.78.31
+search wmi.amu.edu.pl labs.wmi.amu.edu.pl
+
+OPIS:
+Plik /etc/hosts zawiera statyczne wpisy IP hostów aby ograniczyć liczbę zapytań DNS
+
+WYDRUK:
+s416084@pc14c:~/Documents/SIK2017$ cat /etc/hosts
+127.0.0.1   localhost pc14c.labs.wmi.amu.edu.pl pc14c
+150.254.79.4     pc14c.labs.wmi.amu.edu.pl pc14c
+
+150.254.78.40 files  files.wmi.amu.edu.pl
+150.254.78.47 mgmt   mgmt.wmi.amu.edu.pl
+
+2001:808:114:2::40 files  files.wmi.amu.edu.pl
+2001:808:114:2::47 mgmt   mgmt.wmi.amu.edu.pl
+
+::1     localhost ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+
+127.0.0.1 sandbox.hortonworks.com
+
+OPIS:
+Plik /etc/services zawiera wpisy wszystkich znanych usług i portów im przypisanych.
+
+WYDRUK:
+s416084@pc14c:~/Documents/SIK2017$ tail -n 15 /etc/services 
+sgi-gcd		17003/udp			# SGI Group membership daemon
+sgi-cad		17004/tcp			# Cluster Admin daemon
+isdnlog		20011/tcp			# isdn logging system
+isdnlog		20011/udp
+vboxd		20012/tcp			# voice box system
+vboxd		20012/udp
+binkp		24554/tcp			# binkp fidonet protocol
+asp		27374/tcp			# Address Search Protocol
+asp		27374/udp
+csync2		30865/tcp			# cluster synchronization tool
+dircproxy	57000/tcp			# Detachable IRC Proxy
+tfido		60177/tcp			# fidonet EMSI over telnet
+fido		60179/tcp			# fidonet EMSI over TCP
+
+OPIS:
+Polecenie netstat pozwala na wyświetlanie otwartych połączeń.
+
+WYDRUK:
+s416084@pc14c:~/Documents/SIK2017$ netstat -A inet -l -p -n
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 0.0.0.0:10050           0.0.0.0:*               LISTEN      -               
+tcp        0      0 0.0.0.0:37834           0.0.0.0:*               LISTEN      -               
+tcp        0      0 0.0.0.0:111             0.0.0.0:*               LISTEN      -               
+tcp        0      0 0.0.0.0:38133           0.0.0.0:*               LISTEN      -               
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      -               
+udp        0      0 0.0.0.0:56301           0.0.0.0:*                           -               
+udp        0      0 0.0.0.0:57041           0.0.0.0:*                           -               
+udp        0      0 150.254.79.4:68         0.0.0.0:*                           -               
+udp        0      0 0.0.0.0:111             0.0.0.0:*                           -               
+udp        0      0 0.0.0.0:605             0.0.0.0:*                           -               
+udp        0      0 127.0.0.1:743           0.0.0.0:*                           -               
+
+OPIS:
+Polecenie telnet pozwala na przesyłanie do zdalnej maszyny łańcuchów znakowych za pomocą TCP.
+
+WYDRUK:
+s416084@pc14c:~/Documents/SIK2017$ telnet www.tvn24.pl 80
+Trying 46.229.145.10...
+Connected to www.tvn24.pl.
+Escape character is '^]'.
+
+OPIS:
+Polecenie nc i netcat pozwalają przesyłać pakiety TCP.
+
+WYDRUK:
+s416084@pc14c:~/Documents/SIK2017$ nc -l -p 31202
+dobra
+s416084@pc14c:~/Documents/SIK2017$ netcat localhost 31202
+dobra
+
+
+Zadanie 1 
+
+s416084@pc14c:~/Documents/SIK2017$ nc -l -p 31202
+GET / HTTP/1.1
+Host: 127.0.0.1:31202
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+Zadanie 1b 
+
+s416084@pc14c:~/Documents/SIK2017$ telnet www.onet.pl 80 | head -n 20
+Trying 213.180.141.140...
+Connected to www.onet.pl.
+Escape character is '^]'.
+GET / HTTP/1.0
+Host: www.onet.pl
+
+HTTP/1.1 200 OK
+Server: Dreamlab Accelerator
+Date: Wed, 22 Feb 2017 12:20:50 GMT
+Content-Type: text/html; charset=utf-8
+Content-Length: 421491
+Connection: close
+Vary: Accept-Encoding
+cache-control: no-cache
+
+<!DOCTYPE html> <html> <head> <meta charset="utf-8" /> <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><script type="text/javascript">/* <![CDATA[ */
+accConf = {"events":{"endpointPaths":["/a8f4d8cd95e164917035b64b867a45dd"]}};
+/* ]]> */</script>
+
+
+Zadanie 2 
+
+s416084@pc14c:~/Documents/SIK2017$ nc pc14g 50013
+Dzień dobry maciej
+Kocham sieci
+
+416196@pc14g:~/Desktop$ nc -l -p 50013
+Dzień dobry maciej
+Kocham sieci
+
+Zadanie A.1
+
+Wydruk polecenia ifconfig -a
+
+eth0      Link encap:Ethernet  HWaddr 08:00:27:4D:EC:2A  
+          inet addr:10.0.2.15  Bcast:10.0.2.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:28421 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:11357 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:33207696 (31.6 MiB)  TX bytes:689459 (673.2 KiB)
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+tap0      Link encap:Ethernet  HWaddr AA:32:E4:7D:F3:C3  
+          BROADCAST MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:500 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+tap1      Link encap:Ethernet  HWaddr 86:BE:F5:A5:66:63  
+          BROADCAST MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:500 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+tap2      Link encap:Ethernet  HWaddr FE:99:C2:C3:A9:83  
+          BROADCAST MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:500 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+tap3      Link encap:Ethernet  HWaddr EA:3B:BB:8D:AD:53  
+          BROADCAST MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:500 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+tap4      Link encap:Ethernet  HWaddr D6:B1:FE:4C:F1:9D  
+          BROADCAST MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:500 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+
+Wydruk polecenia route
+
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+10.0.2.0        *               255.255.255.0   U     202    0        0 eth0
+default         10.0.2.2        0.0.0.0         UG    202    0        0 eth0
+
+Wydruk polecenia route po przypisaniu adresów do interfejsów tap*
+
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+192.168.6.0     *               255.255.255.0   U     0      0        0 tap4
+192.168.5.0     *               255.255.255.0   U     0      0        0 tap3
+192.168.4.0     *               255.255.255.0   U     0      0        0 tap2
+192.168.3.0     *               255.255.255.0   U     0      0        0 tap1
+192.168.2.0     *               255.255.255.0   U     0      0        0 tap0
+10.0.2.0        *               255.255.255.0   U     202    0        0 eth0
+default         10.0.2.2        0.0.0.0         UG    202    0        0 eth0
+
+Zadanie A.2
+
+# nc -l -p 5122
+witaj jestem Puppy
+
+C:\SIK>nc -target 192.168.2.1 5122
+mTCP Netcat by M Brutman (mbbrutman@gmail.com) (C)opyright 2007-2015
+  Version: Jul  5 2015
+ 
+Resolving server address - press Ctrl-Break to abort
+ 
+Server resolved to 192.168.2.1 - connecting
+ 
+Connected!
+ 
+witaj jestem Puppy
+ 
+Netcat: Ctrl-C detected and sent.  Use Alt-X to quit.
+ 
+Elapsed time: 13.02   Bytes sent: 1  Received: 19
+
+Zadanie A.3
+
+1. Aby odczytać adres IP pod linuxem wystarczy wykonać komendę ifconfig. Dla systeny DOS trzeba sprawdzić zawartość pliku konfiguracyjnego.
+2. Maszyna może mieć dwie nazwy tekstowe, domenową oraz adres IP ściśle ze sobą powiązane we wpisach na serwerach DNS.
+3.Zawartość pliku jest aktualizowana podczas uzyskiwania danych adresowych poprzez usługę DHCP.
+4.Interfejs sieciowy podłączony do tej sieci musi zostac uruchomiony z odpowiednim adresem.

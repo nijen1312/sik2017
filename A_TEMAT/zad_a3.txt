@@ -1,0 +1,4 @@
+1. Aby odczytać adres IP pod linuxem wystarczy wykonać komendę ifconfig. Dla systeny DOS trzeba sprawdzić zawartość pliku konfiguracyjnego.
+2. Maszyna może mieć dwie nazwy tekstowe, domenową oraz adres IP ściśle ze sobą powiązane we wpisach na serwerach DNS.
+3.Zawartość pliku jest aktualizowana podczas uzyskiwania danych adresowych poprzez usługę DHCP.
+4.Interfejs sieciowy podłączony do tej sieci musi zostac uruchomiony z odpowiednim adresem.
